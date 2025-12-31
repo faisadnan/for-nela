@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy New Year 2026 — Untuk Kamu</title>
+  <meta name="description" content="Selamat Tahun Baru 2026. Terima kasih untuk semua memori indah yang kita jalani bersama." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1220;
+      --bg-soft: #151933;
+      --text: #e9ecf5;
+      --muted: #b8c0d9;
+      --accent: #ff7aa2;
+      --accent-2: #7ad7ff;
+      --card: #1b2147;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    [data-theme="light"] {
+      --bg: #f7f8fc;
+      --bg-soft: #eef1fb;
+      --text: #1a1d2b;
+      --muted: #4b5168;
+      --accent: #e84a7f;
+      --accent-2: #1ea7e1;
+      --card: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    a { color: var(--accent); text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    header {
+      position: relative;
+      min-height: 70vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .stars {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.8), transparent 60%),
+        radial-gradient(1.5px 1.5px at 70% 20%, rgba(255,255,255,.7), transparent 60%),
+        radial-gradient(1.8px 1.8px at 40% 80%, rgba(255,255,255,.6), transparent 60%),
+        radial-gradient(1.2px 1.2px at 85% 60%, rgba(255,255,255,.7), transparent 60%);
+      animation: twinkle 6s infinite alternate ease-in-out;
+      opacity: .6;
+    }
+    @keyframes twinkle { from { opacity: .4 } to { opacity: .9 } }
+    .hero {
+      position: relative; z-index: 1;
+      padding: 32px 24px;
+    }
+    .title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(36px, 6vw, 72px);
+      line-height: 1.05;
+      margin: 0 0 12px;
+      letter-spacing: .5px;
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .subtitle { font-size: clamp(16px, 2.2vw, 22px); color: var(--muted); margin: 0 0 24px; }
+    .cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      color: #fff; padding: 12px 18px; border-radius: 12px; box-shadow: var(--shadow);
+      font-weight: 600; border: none; cursor: pointer;
+      transition: transform .2s ease, filter .2s ease;
+    }
+    .cta:hover { transform: translateY(-2px); filter: brightness(1.05); }
+    .toolbar {
+      position: fixed; right: 16px; bottom: 16px; z-index: 10;
+      display: flex; gap: 10px;
+    }
+    .tool-btn {
+      background: var(--card); color: var(--text); border: 1px solid rgba(255,255,255,.08);
+      padding: 10px 12px; border-radius: 12px; box-shadow: var(--shadow);
+      cursor: pointer; font-weight: 600;
+    }
+    section { padding: 48px 0; }
+    .card {
+      background: var(--card); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px; box-shadow: var(--shadow); padding: 24px;
+    }
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(24px, 3.5vw, 36px);
+      margin: 0 0 18px;
+    }
+    .muted { color: var(--muted); }
+    /* Love letter */
+    .letter { font-size: 18px; line-height: 1.8; }
+    .signature { margin-top: 16px; font-weight: 600; color: var(--accent); }
+    /* Timeline */
+    .timeline { display: grid; gap: 16px; }
+    .moment {
+      display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: start;
+      background: rgba(255,255,255,.03); border: 1px dashed rgba(255,255,255,.12);
+      padding: 16px; border-radius: 14px;
+    }
+    .date { font-weight: 700; color: var(--accent-2); }
+    .place { font-weight: 600; color: var(--accent); }
+    /* Gallery */
+    .gallery {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    }
+    .gallery img {
+      width: 100%; height: 220px; object-fit: cover; border-radius: 14px;
+      filter: saturate(1.05) contrast(1.02);
+      transition: transform .25s ease, box-shadow .25s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    }
+    .gallery img:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 28px rgba(0,0,0,.35); }
+    /* Footer */
+    footer { text-align: center; padding: 36px 0 60px; color: var(--muted); }
+    .heart {
+      display: inline-block; width: 18px; height: 18px; margin: 0 6px;
+      background: radial-gradient(circle at 30% 30%, #ff7aa2 30%, transparent 31%),
+                  radial-gradient(circle at 70% 30%, #ff7aa2 30%, transparent 31%),
+                  radial-gradient(closest-side, #ff7aa2 99%, transparent 100%);
+      transform: rotate(45deg);
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .moment { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+      .subtitle { font-size: 16px; }
+      .letter { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <button class="tool-btn" id="toggleTheme">Mode: Gelap</button>
+    <button class="tool-btn" id="toggleMusic">Musik: Off</button>
+  </div>
+
+  <header>
+    <div class="stars" aria-hidden="true"></div>
+    <div class="hero container">
+      <h1 class="title">Happy New Year 2026</h1>
+      <p class="subtitle">Untuk kamu—terima kasih sudah jadi rumah dari semua pulangku. Tahun ini, kita tambah satu bab lagi.</p>
+      <button class="cta" id="scrollMemories">Lihat Memori Kita</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="letter" class="card">
+      <h2 class="section-title">Surat kecil untuk kamu</h2>
+      <p class="letter" id="loveLetter">
+        Di antara malam yang pelan dan kota yang tak pernah benar-benar tidur, kamu selalu jadi jeda yang paling menenangkan.
+        2025 mengajarkan kita sabar, tertawa, dan saling menggenggam saat cuaca tak menentu. 2026—aku ingin tetap berjalan
+        di sebelahmu, menata hari-hari sederhana, dan merayakan hal-hal kecil yang diam-diam membuat kita besar.
+      </p>
+      <p class="signature">— Aku, yang selalu jatuh cinta padamu</p>
+    </section>
+
+    <section id="memories" class="card">
+      <h2 class="section-title">Timeline memori kita</h2>
+      <p class="muted">Beberapa potongan waktu yang ingin selalu kita ingat.</p>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section id="gallery" class="card">
+      <h2 class="section-title">Galeri foto</h2>
+      <p class="muted">Ganti dengan foto-foto kita—biar halaman ini benar-benar jadi milik kita.</p>
+      <div class="gallery" id="galleryGrid"></div>
+    </section>
+  </main>
+
+  <footer>
+    Dibuat dengan <span class="heart" aria-hidden="true"></span> untuk kamu. Selamat Tahun Baru 2026.
+  </footer>
+
+  <!-- Musik latar (opsional): ganti src dengan file mp3 kamu -->
+  <audio id="bgm" src="" preload="none" loop></audio>
+
+  <script>
+    // ====== DATA: Ganti dengan memori kalian ======
+    const MEMORIES = [
+      {
+        date: "14 Jan 2025",
+        place: "Kota Tua, Jakarta",
+        title: "Hujan yang bikin kita betah",
+        story: "Kita berteduh di bawah kanopi, pesan kopi panas, dan tertawa karena payung cuma satu. Hujan jadi alasan untuk pelan."
+      },
+      {
+        date: "02 Mar 2025",
+        place: "Pantai Anyer",
+        title: "Sunset yang diam-diam menguatkan",
+        story: "Langit oranye, angin asin, dan kamu bilang: 'Kita nggak harus cepat, yang penting bareng.' Aku percaya."
+      },
+      {
+        date: "21 Jun 2025",
+        place: "Konser kecil di Kemang",
+        title: "Lagu yang jadi sandi",
+        story: "Kita nyanyi pelan, saling senyum. Sejak itu, setiap lagu itu diputar, aku ingat kamu."
+      },
+      {
+        date: "01 Jan 2026",
+        place: "Cengkareng, Banten",
+        title: "Tahun baru, janji sederhana",
+        story: "Jam 00:00—kita saling peluk. Nggak muluk-muluk: sehat, jujur, dan terus memilih satu sama lain."
+      }
+    ];
+
+    const GALLERY = [
+      // Ganti 'images/...' dengan path foto kamu
+      { src: "images/kita-1.jpg", alt: "Kita di Kota Tua" },
+      { src: "images/kita-2.jpg", alt: "Sunset di Anyer" },
+      { src: "images/kita-3.jpg", alt: "Konser kecil di Kemang" },
+      { src: "images/kita-4.jpg", alt: "Tahun baru di Cengkareng" },
+      { src: "images/kita-5.jpg", alt: "Jalan malam cari kopi" },
+      { src: "images/kita-6.jpg", alt: "Selfie ketawa kebablasan" }
+    ];
+
+    // ====== RENDER TIMELINE ======
+    function renderTimeline() {
+      const wrap = document.getElementById("timeline");
+      wrap.innerHTML = "";
+      MEMORIES.forEach(m => {
+        const el = document.createElement("article");
+        el.className = "moment";
+        el.innerHTML = `
+          <div>
+            <div class="date">${m.date}</div>
+            <div class="place">${m.place}</div>
+          </div>
+          <div>
+            <h3 style="margin:0 0 6px">${m.title}</h3>
+            <p class="muted" style="margin:0">${m.story}</p>
+          </div>
+        `;
+        wrap.appendChild(el);
+      });
+    }
+
+    // ====== RENDER GALLERY ======
+    function renderGallery() {
+      const grid = document.getElementById("galleryGrid");
+      grid.innerHTML = "";
+      GALLERY.forEach(g => {
+        const img = document.createElement("img");
+        img.src = g.src;
+        img.alt = g.alt;
+        grid.appendChild(img);
+      });
+    }
+
+    // ====== THEME TOGGLE ======
+    const themeBtn = document.getElementById("toggleTheme");
+    function setTheme(mode) {
+      document.documentElement.setAttribute("data-theme", mode);
+      themeBtn.textContent = `Mode: ${mode === "light" ? "Terang" : "Gelap"}`;
+      localStorage.setItem("theme", mode);
+    }
+    themeBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme") || "dark";
+      setTheme(current === "dark" ? "light" : "dark");
+    });
+
+    // ====== MUSIC TOGGLE ======
+    const musicBtn = document.getElementById("toggleMusic");
+    const bgm = document.getElementById("bgm");
+    musicBtn.addEventListener("click", () => {
+      if (!bgm.src) {
+        alert("Tambahkan file musik kamu ke tag <audio id='bgm' src='musik.mp3'> agar fitur ini aktif.");
+        return;
+      }
+      if (bgm.paused) { bgm.play(); musicBtn.textContent = "Musik: On"; }
+      else { bgm.pause(); musicBtn.textContent = "Musik: Off"; }
+    });
+
+    // ====== SCROLL TO MEMORIES ======
+    document.getElementById("scrollMemories").addEventListener("click", () => {
+      document.getElementById("memories").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // ====== INIT ======
+    (function init() {
+      const saved = localStorage.getItem("theme");
+      setTheme(saved || "dark");
+      renderTimeline();
+      renderGallery();
+    })();
+  </script>
+</body>
+</html>
