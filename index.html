@@ -108,39 +108,23 @@
     Dibuat dengan ❤️ oleh adenan, untuk nela Selamat Tahun Baru 2026.
   </footer>
 
-<audio id="bg-music" autoplay loop muted>
-  <source src="audio/music.mp3" type="audio/mpeg">
-</audio>
+<audio id="bgm" src="audio/music.mp3" loop></audio>
+  <button id="toggleMusic">🎵 Putar Musik</button>
 
 <script>
   const musicBtn = document.getElementById("toggleMusic");
-  const bg-music = document.getElementById("bg-music);
+  const bgm = document.getElementById("bgm");
 
   musicBtn.addEventListener("click", () => {
-    if (bg-music.paused) {
-      bg-music.play();
+    if (bgm.paused) {
+      bgm.play();
       musicBtn.textContent = "🔇 Matikan Musik";
     } else {
-      bg-music.pause();
+      bgm.pause();
       musicBtn.textContent = "🎵 Putar Musik";
     }
   });
 </script>
-
-  <button id="toggleMusic" style="
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 12px 20px;
-  background: linear-gradient(135deg, #ff7aa2, #7ad7ff);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 1000;
-">🎵 Putar Musik</button>
 
 </body>
 </html>
