@@ -101,6 +101,8 @@
       </div>
     </div>
   </div>
+  
+<button id="toggleMusic">🎵 Putar Musik</button>
 
  
 
@@ -124,6 +126,21 @@
       musicBtn.textContent = "🎵 Putar Musik";
     }
   });
+
+  #toggleMusic {
+  position: fixed;
+  top: 20px;       /* jarak dari atas */
+  right: 20px;     /* jarak dari kanan */
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #ff7aa2, #7ad7ff);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;   /* supaya selalu di atas elemen lain */
+}
 </script>
 
 </body>
