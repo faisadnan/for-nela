@@ -112,10 +112,35 @@
   <source src="audio/music.mp3" type="audio/mpeg">
 </audio>
 
-<button onclick="document.getElementById('bg-music').muted=false">
-  🎶 Aktifkan Musik
-</button>
+<script>
+  const musicBtn = document.getElementById("toggleMusic");
+  const bgm = document.getElementById("bgm");
 
+  musicBtn.addEventListener("click", () => {
+    if (bgm.paused) {
+      bgm.play();
+      musicBtn.textContent = "🔇 Matikan Musik";
+    } else {
+      bgm.pause();
+      musicBtn.textContent = "🎵 Putar Musik";
+    }
+  });
+</script>
+
+  <button id="toggleMusic" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #ff7aa2, #7ad7ff);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+">🎵 Putar Musik</button>
 
 </body>
 </html>
