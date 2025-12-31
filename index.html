@@ -99,9 +99,40 @@
     </div>
   </div>
 
+  <button id="toggleMusic" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 16px;
+  background: #ff7aa2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+">🎵 Putar Musik</button>
+
+  <script>
+  const musicBtn = document.getElementById("toggleMusic");
+  const bgm = document.getElementById("bgm");
+
+  musicBtn.addEventListener("click", () => {
+    if (bgm.paused) {
+      bgm.play();
+      musicBtn.textContent = "🔇 Matikan Musik";
+    } else {
+      bgm.pause();
+      musicBtn.textContent = "🎵 Putar Musik";
+    }
+  });
+</script>
+
   <footer>
     Dibuat dengan ❤️ oleh adenan, untuk nela Selamat Tahun Baru 2026.
   </footer>
-  <audio id="bgm" src="audio/DEWA 19 - Kangen (Lirik).mp3" autoplay loop></audio>
+  <audio id="bgm" src="audio/DEWA 19 - Kangen (Lirik).mp3" loop></audio>
+  
 </body>
 </html>
