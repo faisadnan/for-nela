@@ -108,11 +108,13 @@
     Dibuat dengan ❤️ oleh adenan, untuk nela Selamat Tahun Baru 2026.
   </footer>
 
-<audio id="bg-music" loop>
-  <source src="audio/music" type="audio/mpep">
+<audio id="bg-music" autoplay loop muted>
+  <source src="audio/music.mp3" type="audio/mpeg">
 </audio>
 
-<button onclick="document.getElementById('bg-music').play()">Putar Musik 🎶</button>
+<button onclick="document.getElementById('bg-music').muted=false">
+  🎶 Aktifkan Musik
+</button>
 
 
 </body>
